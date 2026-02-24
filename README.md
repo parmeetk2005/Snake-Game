@@ -1,6 +1,6 @@
-# Classic Snake Game (Vanilla JavaScript, Deterministic Logic)
+# Classic Snake Game (JavaScript, Deterministic Logic)
 
-This repository contains a minimal, fully functional implementation of the classic Snake game built using only vanilla HTML, CSS, and JavaScript. The project focuses on deterministic game logic, testability, and clean separation between game engine and rendering.
+This repository contains a minimal, fully functional implementation of the classic Snake game built using only HTML, CSS, and JavaScript. The project focuses on deterministic game logic, testability, and clean separation between game engine and rendering.
 
 No external libraries or frameworks are used.
 
@@ -91,10 +91,204 @@ It only visualizes state.
 ## Step 1 — Install Node.js
 
 Check installation:
+(If not installed, download from:
+https://nodejs.org
 
 ```bash
 node -v
+```
+If not installed, download from:
 
-(If not installed, download from:
+https://nodejs.org
 
-https://nodejs.org)
+Step 2 — Clone Repository
+```bash
+git clone https://github.com/parmeetk2005/snake-game.git
+```
+Enter project folder:
+```bash
+cd snake-game
+```
+Step 3 — Start Development Server
+```bash
+npm run dev
+```
+Open browser:
+```bash
+http://localhost:5173
+```
+
+Game will run.
+
+How to Run Tests
+
+Run:
+```bash
+npm test
+```
+
+This executes tests in:
+```bash
+tests/snakeLogic.test.js
+```
+Tests verify:
+
+Movement correctness
+
+Direction validation
+
+Growth logic
+
+Wall collision detection
+
+Self collision detection
+
+Food placement correctness
+
+Expected result:
+
+All tests passing
+Controls
+Keyboard Controls
+Arrow Up       Move Up
+Arrow Down     Move Down
+Arrow Left     Move Left
+Arrow Right    Move Right
+
+W              Move Up
+S              Move Down
+A              Move Left
+D              Move Right
+
+Space          Pause / Resume
+On-Screen Controls
+
+Available for mobile and mouse users:
+
+Up button
+
+Down button
+
+Left button
+
+Right button
+
+Pause button
+
+Restart button
+
+Game Rules
+
+The snake moves continuously across the grid.
+
+Eating food:
+
+Increases score by 1
+
+Increases snake length
+
+Game ends when:
+
+Snake hits wall
+
+Snake hits itself
+
+Restart resets:
+
+Snake position
+
+Score
+
+Game state
+
+Design Principles Used
+
+This project follows these engineering principles:
+
+Deterministic logic
+
+Same input → same output.
+
+Ensures reliability.
+
+Separation of concerns
+
+Game logic is independent from rendering.
+
+Improves maintainability and testability.
+
+Minimal dependency architecture
+
+No external libraries.
+
+Reduces complexity and improves portability.
+
+Testable design
+
+Core engine can be unit tested independently.
+
+Ensures correctness.
+
+Scripts Available
+
+Run development server:
+
+npm run dev
+
+Run tests:
+
+npm test
+Example Game Flow
+
+Game starts
+
+Snake moves automatically
+
+Player controls direction
+
+Snake eats food → grows
+
+Player avoids collision
+
+Game ends on collision
+
+Player restarts
+
+Why This Project is Valuable
+
+This project demonstrates understanding of:
+
+Game loop architecture
+
+State management
+
+Deterministic systems
+
+Input handling
+
+Rendering pipeline
+
+Collision detection
+
+Test-driven logic
+
+This is a fundamental example of interactive software engineering.
+
+Future Improvements (Optional)
+
+Possible extensions:
+
+High score persistence (localStorage)
+
+Increasing speed difficulty
+
+Sound effects
+
+Animations
+
+Touch gesture controls
+
+Mobile optimization
+
+Game settings menu
+
