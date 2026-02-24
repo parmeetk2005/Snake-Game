@@ -57,7 +57,7 @@ No external dependencies are used.
 
 # Installation and Setup
 
-## Step 1: Install Node.js
+### Step 1: Install Node.js
 
 Check if Node.js is installed:
 
@@ -70,10 +70,10 @@ https://nodejs.org
 
 ---
 
-## Step 2: Clone Repository
+### Step 2: Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/snake-game.git
+git clone https://github.com/parmeetk2005/snake-game.git
 ```
 
 Enter project folder:
@@ -120,7 +120,7 @@ Tests verify:
 
 # Controls
 
-## Keyboard Controls
+### Keyboard Controls
 
 Arrow Up → Move Up  
 Arrow Down → Move Down  
@@ -153,26 +153,26 @@ Available for mobile and mouse users:
 
 # Game Rules
 
-## Movement
+### Movement
 
 - Snake moves continuously across the grid
 - Player controls only the direction
 
-## Eating Food
+### Eating Food
 
 When snake eats food:
 
 - Score increases by 1
 - Snake length increases
 
-## Game Over Conditions
+### Game Over Conditions
 
 Game ends when:
 
 - Snake hits the wall
 - Snake hits itself
 
-## Restart Behavior
+### Restart Behavior
 
 Restart resets:
 
@@ -186,7 +186,7 @@ Restart resets:
 
 This project uses a layered architecture.
 
-## Game Logic Layer (snakeLogic.js)
+### Game Logic Layer (snakeLogic.js)
 
 Responsible for:
 
@@ -205,7 +205,7 @@ Properties:
 
 ---
 
-## Rendering Layer (snake.js)
+### Rendering Layer (snake.js)
 
 Responsible for:
 
@@ -221,14 +221,14 @@ Rendering layer does not contain game logic.
 
 # Design Principles Used
 
-## Deterministic Logic
+### Deterministic Logic
 
 - Same input always produces same output
 - Ensures predictable and reliable behavior
 
 ---
 
-## Separation of Concerns
+### Separation of Concerns
 
 - Game logic is separate from rendering
 - Improves maintainability
@@ -237,7 +237,7 @@ Rendering layer does not contain game logic.
 
 ---
 
-## Minimal Dependency Architecture
+### Minimal Dependency Architecture
 
 - No external libraries used
 
@@ -249,26 +249,10 @@ Benefits:
 
 ---
 
-## Testable Design
+### Testable Design
 
 - Core logic is independently testable
 - Ensures correctness and reliability
-
----
-
-# Scripts Available
-
-Start development server:
-
-```bash
-npm run dev
-```
-
-Run tests:
-
-```bash
-npm test
-```
 
 ---
 
