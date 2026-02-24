@@ -144,12 +144,12 @@ tests/snakeLogic.test.js
 
 Tests verify:
 
--Movement correctness
--Direction validation
--Growth logic
--Wall collision detection
--Self collision detection
--Food placement correctness
+-Movement correctness  
+-Direction validation  
+-Growth logic  
+-Wall collision detection  
+-Self collision detection  
+-Food placement correctness  
 
 Expected result:
 ```bash
