@@ -1,41 +1,40 @@
-# Classic Snake Game (JavaScript, Deterministic Logic)
+# Classic Snake Game
 
-This repository contains a minimal, fully functional implementation of the classic Snake game built using only HTML, CSS, and JavaScript. The project focuses on deterministic game logic, testability, and clean separation between game engine and rendering.
-
-No external libraries or frameworks are used.
+A minimal and fully functional implementation of the classic Snake game built using HTML, CSS, and JavaScript. This project focuses on deterministic game logic, clean architecture, and testability. No external libraries or frameworks are used.
 
 ---
 
-# Live Overview
+# Overview
 
-This is a browser-based Snake game featuring:
+This is a browser-based Snake game demonstrating core game development principles using simple and maintainable code.
+
+Features included:
 
 - Grid-based snake movement
-- Food spawning
-- Snake growth
+- Food spawning system
+- Snake growth mechanism
 - Score tracking
-- Collision detection
+- Collision detection (wall and self)
 - Game over handling
 - Restart functionality
 - Pause and resume support
-- Keyboard and on-screen controls
-- Deterministic core game engine
-- Unit tested logic
+- Keyboard controls
+- On-screen controls for mobile and mouse users
+- Deterministic and testable core logic
+- Unit tested game engine
 
 ---
 
-# Objectives of This Project
+# Technology Stack
 
-The main purpose of this project is to demonstrate:
+This project uses:
 
-- Clean game loop implementation
-- Deterministic state management
-- Separation of concerns (logic vs rendering)
-- Testable architecture
-- Minimal dependency footprint
-- Browser-based interactive application
+- HTML5
+- CSS3
+- JavaScript
+- Node.js (for development server and testing)
 
-This is designed to be simple, predictable, and maintainable.
+No external dependencies are used.
 
 ---
 
@@ -43,196 +42,284 @@ This is designed to be simple, predictable, and maintainable.
 
 | File / Folder | Type | Description |
 |--------------|------|-------------|
-| `index.html` | File | Entry point of the application. Contains the main HTML structure and root container where the game is rendered. |
-| `styles.css` | File | Defines the visual appearance of the game including grid layout, snake styling, food styling, buttons, and overall UI layout. |
-| `snake.js` | File | Handles the game loop, rendering logic, keyboard input handling, on-screen controls, pause/resume functionality, and UI updates. Connects the core logic with the visual layer. |
-| `snakeLogic.js` | File | Contains the deterministic core game engine. Responsible for snake movement, direction changes, collision detection, food spawning, growth logic, score updates, and state transitions. Fully testable and independent of rendering. |
-| `server.mjs` | File | Lightweight Node.js development server used to serve the project locally. Allows running the game in a browser during development. |
-| `package.json` | File | Contains project metadata and defines scripts such as `npm run dev` to start the server and `npm test` to run unit tests. |
-| `tests/` | Folder | Contains unit tests that verify correctness of the game logic. |
-| `tests/snakeLogic.test.js` | File | Unit tests for core game engine. Tests movement, growth, collision detection, and food placement logic. |
-| `.gitignore` | File | Specifies files and folders ignored by Git such as node_modules, system files, and environment files. |
-| `README.md` | File | Documentation explaining project purpose, setup instructions, architecture, controls, and usage. |
+| index.html | File | Entry point of the application. Contains main HTML structure and game container. |
+| styles.css | File | Defines layout, grid styling, snake appearance, food appearance, and UI controls. |
+| snake.js | File | Handles rendering, input handling, game loop, and UI updates. |
+| snakeLogic.js | File | Core deterministic game engine. Handles movement, collision detection, food spawning, and game state. |
+| server.mjs | File | Lightweight Node.js development server used to run the project locally. |
+| package.json | File | Contains project scripts and metadata. |
+| tests/ | Folder | Contains unit tests for core game logic. |
+| tests/snakeLogic.test.js | File | Unit tests verifying movement, growth, collisions, and food placement. |
+| .gitignore | File | Specifies files ignored by Git. |
+| README.md | File | Project documentation. |
 
 ---
 
-# How the Game Works (Architecture)
+# Installation and Setup
 
-The project separates game into two layers:
+## Step 1: Install Node.js
 
-## Layer 1 — Game Logic (snakeLogic.js)
-
-Responsible for:
-
-- Snake position tracking
-- Direction updates
-- Collision detection
-- Food placement
-- Score updates
-- Game state transitions
-
-This layer is:
-
-- Deterministic
-- Independent of UI
-- Fully testable
-
-This makes it reusable and reliable.
-
----
-
-## Layer 2 — Rendering and Input (snake.js)
-
-Responsible for:
-
-- Rendering snake and food
-- Capturing keyboard input
-- Handling on-screen controls
-- Running game loop timer
-- Updating UI
-
-This layer does not contain game logic.
-
-It only visualizes state.
-
----
-
-# How to Run the Project
-
-## Step 1 — Install Node.js
-
-Check installation:
+Check if Node.js is installed:
 
 ```bash
 node -v
 ```
+
 If not installed, download from:
-
 https://nodejs.org
-
-Step 2 — Clone Repository
-```bash
-git clone https://github.com/parmeetk2005/snake-game.git
-```
-Enter project folder:
-```bash
-cd snake-game
-```
-Step 3 — Start Development Server
-```bash
-npm run dev
-```
-Open browser:
-```bash
-http://localhost:5173
-```
-Game will run.
 
 ---
 
-# How to Run Tests
+## Step 2: Clone Repository
 
-Run:
+```bash
+git clone https://github.com/YOUR_USERNAME/snake-game.git
+```
+
+Enter project folder:
+
+```bash
+cd snake-game
+```
+---
+
+# Running the Project
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Open browser and go to:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+# Running Tests
+
+Run unit tests:
+
 ```bash
 npm test
 ```
 
-This executes tests in:
-```bash
-tests/snakeLogic.test.js
-```
-
 Tests verify:
 
--Movement correctness  
--Direction validation  
--Growth logic  
--Wall collision detection  
--Self collision detection  
--Food placement correctness  
+- Movement logic correctness
+- Direction handling validation
+- Snake growth behavior
+- Wall collision detection
+- Self collision detection
+- Food placement correctness
 
-Expected result:
-```bash
-All tests passing
-```
+---
 
-# Keyboard Controls
-```bash
-Arrow Up       Move Up
-Arrow Down     Move Down
-Arrow Left     Move Left
-Arrow Right    Move Right
+# Controls
 
-W              Move Up
-S              Move Down
-A              Move Left
-D              Move Right
+## Keyboard Controls
 
-Space          Pause / Resume
-```
+Arrow Up → Move Up  
+Arrow Down → Move Down  
+Arrow Left → Move Left  
+Arrow Right → Move Right  
+
+Alternative keys:
+
+W → Move Up  
+S → Move Down  
+A → Move Left  
+D → Move Right  
+
+Space → Pause or Resume game  
+
+---
 
 # On-Screen Controls
 
-Available for both mobile and mouse users:
+Available for mobile and mouse users:
 
-- Up Button → Moves snake upward  
-- Down Button → Moves snake downward  
-- Left Button → Moves snake left  
-- Right Button → Moves snake right  
-- Pause Button → Pauses or resumes the game  
-- Restart Button → Restarts the game from initial state  
+- Up Button → Move snake upward
+- Down Button → Move snake downward
+- Left Button → Move snake left
+- Right Button → Move snake right
+- Pause Button → Pause or resume game
+- Restart Button → Restart game
 
 ---
 
 # Game Rules
 
-## Continuous Movement
-- The snake moves continuously across the grid once the game starts.
-- Player input only changes direction, not movement speed.
+## Movement
+
+- Snake moves continuously across the grid
+- Player controls only the direction
 
 ## Eating Food
-When the snake eats food:
+
+When snake eats food:
 
 - Score increases by 1
-- Snake length increases by one segment
+- Snake length increases
 
 ## Game Over Conditions
-The game ends immediately when:
 
-- Snake collides with the wall
-- Snake collides with itself
+Game ends when:
+
+- Snake hits the wall
+- Snake hits itself
 
 ## Restart Behavior
-When restarting the game:
 
-- Snake position resets to initial state
-- Score resets to 0
-- Game state resets to running mode
+Restart resets:
+
+- Snake position
+- Score
+- Game state
+
+---
+
+# Architecture
+
+This project uses a layered architecture.
+
+## Game Logic Layer (snakeLogic.js)
+
+Responsible for:
+
+- Snake position updates
+- Movement logic
+- Collision detection
+- Food spawning
+- Growth handling
+- Score tracking
+
+Properties:
+
+- Deterministic
+- Testable
+- Independent of rendering
+
+---
+
+## Rendering Layer (snake.js)
+
+Responsible for:
+
+- Rendering snake and food
+- Handling keyboard input
+- Handling on-screen controls
+- Running game loop
+- Updating UI
+
+Rendering layer does not contain game logic.
 
 ---
 
 # Design Principles Used
 
-This project follows core software engineering principles to ensure reliability and maintainability.
-
 ## Deterministic Logic
-- Same input always produces the same output
-- Ensures predictable and testable behavior
+
+- Same input always produces same output
+- Ensures predictable and reliable behavior
+
+---
 
 ## Separation of Concerns
-- Game logic is independent from rendering layer
+
+- Game logic is separate from rendering
 - Improves maintainability
-- Makes logic reusable and testable
+- Improves testability
+- Improves code clarity
+
+---
 
 ## Minimal Dependency Architecture
+
 - No external libraries used
-- Reduces complexity
-- Improves portability
-- Easier to maintain long-term
+
+Benefits:
+
+- Reduced complexity
+- Easier maintenance
+- Better portability
+
+---
 
 ## Testable Design
-- Core game engine is isolated
-- Logic can be unit tested independently
+
+- Core logic is independently testable
 - Ensures correctness and reliability
 
 ---
+
+# Scripts Available
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Run tests:
+
+```bash
+npm test
+```
+
+---
+
+# Example Game Flow
+
+Typical game lifecycle:
+
+1. Game starts
+2. Snake moves automatically
+3. Player controls snake direction
+4. Snake eats food
+5. Snake grows in length
+6. Player avoids collisions
+7. Collision occurs
+8. Game ends
+9. Player restarts game
+
+---
+
+# Why This Project is Valuable
+
+This project demonstrates:
+
+- Game loop implementation
+- State management
+- Deterministic system design
+- Input handling
+- Rendering logic
+- Collision detection
+- Testable architecture
+- Separation of concerns
+
+This is a clean implementation of an interactive browser-based game.
+
+---
+
+# Future Improvements
+
+Possible enhancements:
+
+- High score persistence using localStorage
+- Increasing difficulty over time
+- Sound effects
+- Visual animations
+- Touch gesture support
+- Mobile optimization
+- Difficulty levels
+- Game settings panel
+
+---
+
+# License
+
+Free to use and modify.
