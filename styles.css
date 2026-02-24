@@ -1,0 +1,70 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+.app {
+  max-width: 460px;
+  margin: 24px auto;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.hud p {
+  margin: 0;
+}
+
+#board {
+  width: 100%;
+  display: block;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  border: 1px solid #aaa;
+  background: #f2f2f2;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.controls {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+}
+
+.controls-row {
+  display: flex;
+  gap: 8px;
+}
