@@ -41,7 +41,18 @@ This is designed to be simple, predictable, and maintainable.
 
 # Project Structure
 
-
+| File / Folder | Type | Description |
+|--------------|------|-------------|
+| `index.html` | File | Entry point of the application. Contains the main HTML structure and root container where the game is rendered. |
+| `styles.css` | File | Defines the visual appearance of the game including grid layout, snake styling, food styling, buttons, and overall UI layout. |
+| `snake.js` | File | Handles the game loop, rendering logic, keyboard input handling, on-screen controls, pause/resume functionality, and UI updates. Connects the core logic with the visual layer. |
+| `snakeLogic.js` | File | Contains the deterministic core game engine. Responsible for snake movement, direction changes, collision detection, food spawning, growth logic, score updates, and state transitions. Fully testable and independent of rendering. |
+| `server.mjs` | File | Lightweight Node.js development server used to serve the project locally. Allows running the game in a browser during development. |
+| `package.json` | File | Contains project metadata and defines scripts such as `npm run dev` to start the server and `npm test` to run unit tests. |
+| `tests/` | Folder | Contains unit tests that verify correctness of the game logic. |
+| `tests/snakeLogic.test.js` | File | Unit tests for core game engine. Tests movement, growth, collision detection, and food placement logic. |
+| `.gitignore` | File | Specifies files and folders ignored by Git such as node_modules, system files, and environment files. |
+| `README.md` | File | Documentation explaining project purpose, setup instructions, architecture, controls, and usage. |
 
 ---
 
@@ -91,8 +102,6 @@ It only visualizes state.
 ## Step 1 — Install Node.js
 
 Check installation:
-(If not installed, download from:
-https://nodejs.org
 
 ```bash
 node -v
@@ -117,10 +126,11 @@ Open browser:
 ```bash
 http://localhost:5173
 ```
-
 Game will run.
 
-How to Run Tests
+---
+
+# How to Run Tests
 
 Run:
 ```bash
@@ -131,6 +141,7 @@ This executes tests in:
 ```bash
 tests/snakeLogic.test.js
 ```
+
 Tests verify:
 
 Movement correctness
@@ -146,10 +157,12 @@ Self collision detection
 Food placement correctness
 
 Expected result:
-
+```bash
 All tests passing
-Controls
-Keyboard Controls
+```
+
+# Keyboard Controls
+```bash
 Arrow Up       Move Up
 Arrow Down     Move Down
 Arrow Left     Move Left
@@ -161,134 +174,70 @@ A              Move Left
 D              Move Right
 
 Space          Pause / Resume
-On-Screen Controls
+```
 
-Available for mobile and mouse users:
+# On-Screen Controls
 
-Up button
+Available for both mobile and mouse users:
 
-Down button
+- Up Button → Moves snake upward  
+- Down Button → Moves snake downward  
+- Left Button → Moves snake left  
+- Right Button → Moves snake right  
+- Pause Button → Pauses or resumes the game  
+- Restart Button → Restarts the game from initial state  
 
-Left button
+---
 
-Right button
+# Game Rules
 
-Pause button
+## Continuous Movement
+- The snake moves continuously across the grid once the game starts.
+- Player input only changes direction, not movement speed.
 
-Restart button
+## Eating Food
+When the snake eats food:
 
-Game Rules
+- Score increases by 1
+- Snake length increases by one segment
 
-The snake moves continuously across the grid.
+## Game Over Conditions
+The game ends immediately when:
 
-Eating food:
+- Snake collides with the wall
+- Snake collides with itself
 
-Increases score by 1
+## Restart Behavior
+When restarting the game:
 
-Increases snake length
+- Snake position resets to initial state
+- Score resets to 0
+- Game state resets to running mode
 
-Game ends when:
+---
 
-Snake hits wall
+# Design Principles Used
 
-Snake hits itself
+This project follows core software engineering principles to ensure reliability and maintainability.
 
-Restart resets:
+## Deterministic Logic
+- Same input always produces the same output
+- Ensures predictable and testable behavior
 
-Snake position
+## Separation of Concerns
+- Game logic is independent from rendering layer
+- Improves maintainability
+- Makes logic reusable and testable
 
-Score
+## Minimal Dependency Architecture
+- No external libraries used
+- Reduces complexity
+- Improves portability
+- Easier to maintain long-term
 
-Game state
+## Testable Design
+- Core game engine is isolated
+- Logic can be unit tested independently
+- Ensures correctness and reliability
 
-Design Principles Used
-
-This project follows these engineering principles:
-
-Deterministic logic
-
-Same input → same output.
-
-Ensures reliability.
-
-Separation of concerns
-
-Game logic is independent from rendering.
-
-Improves maintainability and testability.
-
-Minimal dependency architecture
-
-No external libraries.
-
-Reduces complexity and improves portability.
-
-Testable design
-
-Core engine can be unit tested independently.
-
-Ensures correctness.
-
-Scripts Available
-
-Run development server:
-
-npm run dev
-
-Run tests:
-
-npm test
-Example Game Flow
-
-Game starts
-
-Snake moves automatically
-
-Player controls direction
-
-Snake eats food → grows
-
-Player avoids collision
-
-Game ends on collision
-
-Player restarts
-
-Why This Project is Valuable
-
-This project demonstrates understanding of:
-
-Game loop architecture
-
-State management
-
-Deterministic systems
-
-Input handling
-
-Rendering pipeline
-
-Collision detection
-
-Test-driven logic
-
-This is a fundamental example of interactive software engineering.
-
-Future Improvements (Optional)
-
-Possible extensions:
-
-High score persistence (localStorage)
-
-Increasing speed difficulty
-
-Sound effects
-
-Animations
-
-Touch gesture controls
-
-Mobile optimization
-
-Game settings menu
-
+---
